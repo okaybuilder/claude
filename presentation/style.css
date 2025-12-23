@@ -1,0 +1,264 @@
+/* Israel Art Shop Presentation - Custom Styles */
+
+:root {
+    --primary-color: #0078d4;
+    --accent-color: #f4a261;
+    --text-color: #ffffff;
+    --background-dark: #1a1a2e;
+    --background-light: #16213e;
+}
+
+/* Override reveal.js defaults */
+.reveal {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.reveal h1 {
+    font-size: 3em;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.reveal h2 {
+    font-size: 2.2em;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.reveal h3 {
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+/* Title Slide */
+.title-slide {
+    text-align: center;
+}
+
+.title-slide h1 {
+    margin-bottom: 20px;
+    font-size: 4em;
+    animation: fadeInScale 1s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.small-text {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 40px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-item {
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+}
+
+.product-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.product-item p {
+    font-size: 1em;
+    color: #ccc;
+}
+
+/* Artist Placeholder */
+.artist-placeholder {
+    background: var(--background-light);
+    padding: 60px;
+    border-radius: 20px;
+    border: 2px dashed var(--primary-color);
+    margin-top: 40px;
+}
+
+.artist-placeholder p {
+    font-size: 1.2em;
+    color: #888;
+    font-style: italic;
+}
+
+/* Gallery Placeholder */
+.gallery-placeholder {
+    background: var(--background-light);
+    padding: 100px;
+    border-radius: 20px;
+    border: 2px dashed var(--accent-color);
+    margin-top: 30px;
+}
+
+.gallery-placeholder p {
+    font-size: 1.5em;
+    color: #888;
+    font-style: italic;
+}
+
+/* Lists */
+.reveal ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reveal ul li {
+    margin: 20px 0;
+    font-size: 1.3em;
+    padding-left: 40px;
+    position: relative;
+}
+
+.reveal ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Testimonials */
+.testimonial {
+    background: var(--background-light);
+    padding: 40px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 10px;
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial footer {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Contact Slide */
+.contact-slide .contact-info {
+    margin: 50px 0;
+}
+
+.contact-slide .contact-info p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.cta {
+    font-size: 2em;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 50px;
+    animation: pulse 2s infinite;
+}
+
+/* Thank You Slide */
+.thank-you-slide {
+    text-align: center;
+}
+
+.thank-you-slide h1 {
+    font-size: 5em;
+    animation: fadeInScale 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Fragment animations enhancement */
+.reveal .fragment.fade-in-then-semi-out {
+    opacity: 0;
+}
+
+.reveal .fragment.fade-in-then-semi-out.visible {
+    opacity: 1;
+}
+
+.reveal .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reveal h1 {
+        font-size: 2.5em;
+    }
+
+    .reveal h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Custom background for slides */
+.reveal .slides {
+    background: radial-gradient(circle at center, var(--background-light) 0%, var(--background-dark) 100%);
+}
+
+/* Progress bar customization */
+.reveal .progress {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--accent-color);
+}
+
+.reveal .progress span {
+    background: var(--accent-color);
+}
+
+/* Controls customization */
+.reveal .controls {
+    color: var(--accent-color);
+}
